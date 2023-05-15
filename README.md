@@ -23,6 +23,7 @@ APA: Sagar, A., & Dheeba, J. (2020). On Using Transfer Learning For Plant Diseas
 google colab 에서 실행하였습니다. 
 
 3. run
+
 학습을 위해, plantdisease_transferlearning.ipynb 파일을 실행한다.
 
 
