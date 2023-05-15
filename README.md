@@ -31,13 +31,21 @@ Pseudocode
 
 Get a clone https://github.com/spMohanty/PlantVillage-Dataset.git
 
+
+
 Change the current directory to PlantVillage-Dataset/data_distribution_for_SVM
 
+
+
 Import warnings, os, glob, matplotlib.pyplot, keras
+
+
 
 Set the directory paths:
 train_dir ="./train/"  Path to the training directory
 test_dir="./test/"    Path to the testing directory
+
+
 
 Define get_files(directory):   takes a directory path as input and returns the count of files in that directory
 	Initialize a count variable to 0
@@ -47,21 +55,29 @@ Define get_files(directory):   takes a directory path as input and returns the c
 			for each subdirectory, use `glob.glob()` to get the list of files.
 	return count
 
+
+
 Get the number of classes and the number of train and test images:
    train_samples = get_files(train_dir)       
  	num_classes = len(glob.glob(train_dir + "/*"))
    test_samples = get_files(test_dir)
+   
 print the number of classes, train images, and test images.
 
-Create an ImageDataGenerator for normalization for the test data:
+
+
+Create an ImageDataGenerator for normalization for the test data: 
 test_datagen = ImageDataGenerator(rescale=1./255)
 
 Define the image dimensions, input shape, and batch size:
    - img_width, img_height = 256, 256
    - input_shape = (img_width, img_height, 3)
    - batch_size = 32
+   - 
 Create an image data generator for learning:
 train_generator = train_datagen.flow_from_directory(train_dir, target_size=(img_width, img_height), batch_size=batch_size)
+
+
 
 Create the model: 
 	import Sequential, Conv2D, MaxPooling2D, Flatten, Dense, Dropout
@@ -77,10 +93,15 @@ Create the model:
    - Add a Dropout layer with a dropout rate of 0.5: model.add(Dropout(0.5))
    - Add a Dense layer with 128 units and 'relu' activation: model.add(Dense(128,activation='relu'))
    - Add a Dense layer with the number of classes as the number of units and 'softmax' activation: model.add(Dense(num_classes, activation='softmax'))
-	Summary the model: model.summary()
+   - 
+Summary the model: model.summary()
+
+
 
 Define the model_layers using the layer names of the model:
 model_layers = [layer.name for layer in model.layers]
+
+
 
 Create separate models to get the output of specific layers in the model:
 conv2d_3_output: Model with inputs=model.input and outputs=model.get_layer('conv2d').output
@@ -91,6 +112,8 @@ conv2d_5_output: Model with inputs=model.input and outputs=model.get_layer('conv
 max_pooling2d_5_output: Model with inputs=model.input and outputs=model.get_layer('max_pooling2d_2').output
 flatten_1_output: Model with inputs=model.input and outputs=model.get_layer('flatten').output
 
+
+
 Obtain features from the intermediate models: 
 conv2d_3_features : conv2d_3_output.predict(img)
 max_pooling2d_3_features : max_pooling2d_3_output.predict(img)
@@ -100,6 +123,8 @@ conv2d_5_features : conv2d_5_output.predict(img)
 max_pooling2d_5_features : max_pooling2d_5_output.predict(img)
 flatten_1_features : flatten_1_output.predict(img)
 
+
+
 Visualize the features using subplots and imshow: 
 	fig = plt.figure with figsize=(14, 7)
 	set columns = 8, rows = 4.
@@ -108,6 +133,8 @@ Visualize the features using subplots and imshow:
    		plt.axis('off')
     		plt.title('filter' + str(i))
   		plt.imshow(conv2d_3_features[0, :, :, i], cmap='viridis')
+
+
 
 Create a validation generator using flow_from_directory
 
@@ -120,13 +147,17 @@ Train the model:
 	Use the `fit_generator` method of the model to train on the train generator data:
  		‘train = model.fit_generator’ with epoch = 30, steps_per_epoch=train_generator.samples, validation_data=validation_generator
 
+
+
 Extract training history for accuracy and loss: 
 	extract acc 
 	extract val_acc 
 	extract loss
 	extract val_loss
 Set epochs range from 1 to len(acc) + 1
+
 Plot the training and validation accuracy
+
 Plot the training and validation loss
 
 
