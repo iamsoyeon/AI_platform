@@ -1,5 +1,5 @@
-# AI_platform
-AI platform assignment (midterm) 
+
+AI 특론 assignment (midterm) 
 
 1. introduction 
 
