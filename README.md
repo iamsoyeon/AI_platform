@@ -20,12 +20,15 @@ APA: Sagar, A., & Dheeba, J. (2020). On Using Transfer Learning For Plant Diseas
 
 
 final assignment (중간과제 코드에서 더 발전시키기)
+
 activation 함수로 Relu 말고, Relu가 갖는 x값이 0보다 작으면 발생하는 Dying ReLU(뉴런이 죽는 현상)현상을 해결하기 위한 leaky_relu를 사용해보면 어떨까 라는 생각을 하게 되었고, 
 Conv2D 레이어에서 사용해보았습니다. 
 그리고 추가로 3개의 Con2D layer 중, 두번째 레이어의 convolution filter를 64개로 변경해보았고, Maxpooling layer의 pool size를 (2,2)로 통일했습니다. 
 
 (기말과제) 수정한 코드는 Plant_transferlearning_revision_final.ipynb 에서 확인하실 수 있습니다. 
+
 코드의 11번째 셀 [11] 의 Define model architecture 부분이 수정되었습니다.
+
 밑에 pseudocode에서도 수정된 부분을 반영하였으며, <- 표시로 부연설명을 해두었습니다. 
 
 다음은 수정된 코드를 돌린 결과입니다. 
