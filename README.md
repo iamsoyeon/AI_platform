@@ -100,11 +100,11 @@ train_generator = train_datagen.flow_from_directory(train_dir, target_size=(img_
 Create the model: 
 	import Sequential, Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 	Initialize a Sequential model: model = Sequential()
-   - Add a Conv2D layer with 32 filters, a (3, 3) kernel, and 'relu' activation: model.add(Conv2D(32, (3, 3), activation='leaky_relu', input_shape=input_shape)) <- activation 함수를 relu대신 leaky_relu를 사용
+   - Add a Conv2D layer with 32 filters, a (3, 3) kernel, and 'leaky_relu' activation: model.add(Conv2D(32, (3, 3), activation='leaky_relu', input_shape=input_shape)) <- activation 함수를 relu대신 leaky_relu를 사용
    - Add a MaxPooling2D layer with a (2, 2) pool size: model.add(MaxPooling2D((2, 2))) <- MaxPooling2D layer 의 pool size를 (2,2)로 통일 (기존에는 첫번째 것만 (3,3) size였음.)
-   - Add another Conv2D layer with 64 filters and 'relu' activation: model.add(Conv2D(32, (3,3), activation='leaky_relu'))  <- 이 layer를 64 개의 필터로 수정하였습니다. activation 함수를 relu대신 leaky_relu를 사용
+   - Add another Conv2D layer with 64 filters and 'leaky_relu' activation: model.add(Conv2D(32, (3,3), activation='leaky_relu'))  <- 이 layer를 64 개의 필터로 수정하였습니다. activation 함수를 relu대신 leaky_relu를 사용
    - Add another MaxPooling2D layer with a (2, 2) pool size: model.add(MaxPooling2D((2, 2)))
-   - Add a Conv2D layer with 64 filters and 'relu' activation: model.add(Conv2D(64, (3, 3), activation='leaky_relu')) <- activation 함수를 relu대신 leaky_relu를 사용
+   - Add a Conv2D layer with 64 filters and 'leaky_relu' activation: model.add(Conv2D(64, (3, 3), activation='leaky_relu')) <- activation 함수를 relu대신 leaky_relu를 사용
    - Add another MaxPooling2D layer with a (2, 2) pool size: model.add(MaxPooling2D((2, 2)))
    - Flatten the output of the previous layer: model.add(Flatten())
   	- Add a Dense layer with 512 units and 'relu' activation: model.add(Dense(512,activation='relu'))
