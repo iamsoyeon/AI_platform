@@ -17,6 +17,19 @@ APA: Sagar, A., & Dheeba, J. (2020). On Using Transfer Learning For Plant Diseas
 
 해당 코드의 일부를 수정하였으며, 수정하여 실행한 코드는 PlantdiseaseMtransferlearning.ipynb 파일에 있습니다.
 
++ final assignment (중간과제 코드에서 더 발전시키기)
+activation 함수로 Relu 말고, Relu가 갖는 x값이 0보다 작으면 발생하는 Dying ReLU(뉴런이 죽는 현상)현상을 해결하기 위한 leaky_relu를 사용해보면 어떨까 라는 생각을 하게 되었고, 
+Conv2D 레이어에서 사용해보았습니다. 
+그리고 추가로 3개의 Con2D layer 중, 두번째 레이어의 convolution filter를 64개로 변경해보았고, Maxpooling layer의 pool size를 (2,2)로 통일했습니다. 
+
+(기말과제) 수정한 코드는 Plant_transferlearning_revision_final.ipynb 에서 확인하실 수 있습니다. 
+코드의 11번째 셀 [11] 의 Define model architecture 부분이 수정되었습니다.
+밑에 pseudocode에서도 수정된 부분을 반영하였으며, <- 표시로 부연설명을 해두었습니다. 
+
+다음은 수정된 코드를 돌린 결과입니다. 
+
+
+
 
 2. installation
 
@@ -82,11 +95,11 @@ train_generator = train_datagen.flow_from_directory(train_dir, target_size=(img_
 Create the model: 
 	import Sequential, Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 	Initialize a Sequential model: model = Sequential()
-   - Add a Conv2D layer with 32 filters, a (3, 3) kernel, and 'relu' activation: model.add(Conv2D(32, (3, 3), activation='relu', input_shape=input_shape))
-   - Add a MaxPooling2D layer with a (3, 3) pool size: model.add(MaxPooling2D((3, 3)))
-   - Add another Conv2D layer with 32 filters and 'relu' activation: model.add(Conv2D(32, (3,3), activation='relu'))
+   - Add a Conv2D layer with 32 filters, a (3, 3) kernel, and 'relu' activation: model.add(Conv2D(32, (3, 3), activation='leaky_relu', input_shape=input_shape)) <- activation 함수를 relu대신 leaky_relu를 사용
+   - Add a MaxPooling2D layer with a (2, 2) pool size: model.add(MaxPooling2D((2, 2))) <- MaxPooling2D layer 의 pool size를 (2,2)로 통일 (기존에는 첫번째 것만 (3,3) size였음.)
+   - Add another Conv2D layer with 64 filters and 'relu' activation: model.add(Conv2D(32, (3,3), activation='leaky_relu'))  <- 이 layer를 64 개의 필터로 수정하였습니다. activation 함수를 relu대신 leaky_relu를 사용
    - Add another MaxPooling2D layer with a (2, 2) pool size: model.add(MaxPooling2D((2, 2)))
-   - Add a Conv2D layer with 64 filters and 'relu' activation: model.add(Conv2D(64, (3, 3), activation='relu'))
+   - Add a Conv2D layer with 64 filters and 'relu' activation: model.add(Conv2D(64, (3, 3), activation='leaky_relu')) <- activation 함수를 relu대신 leaky_relu를 사용
    - Add another MaxPooling2D layer with a (2, 2) pool size: model.add(MaxPooling2D((2, 2)))
    - Flatten the output of the previous layer: model.add(Flatten())
   	- Add a Dense layer with 512 units and 'relu' activation: model.add(Dense(512,activation='relu'))
