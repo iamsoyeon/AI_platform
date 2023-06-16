@@ -1,5 +1,5 @@
 # AI_platform
-AI platform assignment (midterm) 
+AI platform assignment (midterm) + final assignment
 
 1. introduction 
 
@@ -27,7 +27,7 @@ google colab 에서 실행하였습니다.
 학습을 위해, plantdisease_transferlearning.ipynb 파일을 실행한다.
 
 
-Pseudocode
+4. Pseudocode
 
 Get a clone https://github.com/spMohanty/PlantVillage-Dataset.git
 
@@ -73,7 +73,7 @@ Define the image dimensions, input shape, and batch size:
    - img_width, img_height = 256, 256
    - input_shape = (img_width, img_height, 3)
    - batch_size = 32
-   - 
+   
 Create an image data generator for learning:
 train_generator = train_datagen.flow_from_directory(train_dir, target_size=(img_width, img_height), batch_size=batch_size)
 
@@ -93,7 +93,7 @@ Create the model:
    - Add a Dropout layer with a dropout rate of 0.5: model.add(Dropout(0.5))
    - Add a Dense layer with 128 units and 'relu' activation: model.add(Dense(128,activation='relu'))
    - Add a Dense layer with the number of classes as the number of units and 'softmax' activation: model.add(Dense(num_classes, activation='softmax'))
-   - 
+   
 Summary the model: model.summary()
 
 
