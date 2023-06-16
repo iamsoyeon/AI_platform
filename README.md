@@ -34,6 +34,73 @@ Conv2D 레이어에서 사용해보았습니다.
 다음은 수정된 코드를 돌린 결과입니다. 
 
 
+Epoch 1/30
+273/273 [==============================] - 284s 1s/step - loss: 0.1024 - accuracy: 0.3455 - val_loss: 0.0607 - val_accuracy: 0.5670
+Epoch 2/30
+273/273 [==============================] - 280s 1s/step - loss: 0.0582 - accuracy: 0.5912 - val_loss: 0.0420 - val_accuracy: 0.7070
+Epoch 3/30
+273/273 [==============================] - 281s 1s/step - loss: 0.0464 - accuracy: 0.6784 - val_loss: 0.0336 - val_accuracy: 0.7771
+Epoch 4/30
+273/273 [==============================] - 273s 1s/step - loss: 0.0394 - accuracy: 0.7383 - val_loss: 0.0270 - val_accuracy: 0.8250
+Epoch 5/30
+273/273 [==============================] - 271s 996ms/step - loss: 0.0340 - accuracy: 0.7702 - val_loss: 0.0256 - val_accuracy: 0.8293
+Epoch 6/30
+273/273 [==============================] - 281s 1s/step - loss: 0.0307 - accuracy: 0.7929 - val_loss: 0.0219 - val_accuracy: 0.8618
+Epoch 7/30
+273/273 [==============================] - 276s 1s/step - loss: 0.0279 - accuracy: 0.8181 - val_loss: 0.0160 - val_accuracy: 0.9042
+Epoch 8/30
+273/273 [==============================] - 273s 1s/step - loss: 0.0245 - accuracy: 0.8437 - val_loss: 0.0142 - val_accuracy: 0.9158
+Epoch 9/30
+273/273 [==============================] - 279s 1s/step - loss: 0.0229 - accuracy: 0.8541 - val_loss: 0.0135 - val_accuracy: 0.9239
+Epoch 10/30
+273/273 [==============================] - 277s 1s/step - loss: 0.0212 - accuracy: 0.8663 - val_loss: 0.0136 - val_accuracy: 0.9234
+Epoch 11/30
+273/273 [==============================] - 273s 1s/step - loss: 0.0196 - accuracy: 0.8771 - val_loss: 0.0105 - val_accuracy: 0.9453
+Epoch 12/30
+273/273 [==============================] - 270s 989ms/step - loss: 0.0186 - accuracy: 0.8855 - val_loss: 0.0097 - val_accuracy: 0.9461
+Epoch 13/30
+273/273 [==============================] - 282s 1s/step - loss: 0.0169 - accuracy: 0.8971 - val_loss: 0.0105 - val_accuracy: 0.9408
+Epoch 14/30
+273/273 [==============================] - 273s 1000ms/step - loss: 0.0157 - accuracy: 0.9057 - val_loss: 0.0084 - val_accuracy: 0.9562
+Epoch 15/30
+273/273 [==============================] - 268s 982ms/step - loss: 0.0156 - accuracy: 0.9055 - val_loss: 0.0075 - val_accuracy: 0.9595
+Epoch 16/30
+273/273 [==============================] - 267s 981ms/step - loss: 0.0149 - accuracy: 0.9126 - val_loss: 0.0061 - val_accuracy: 0.9694
+Epoch 17/30
+273/273 [==============================] - 267s 979ms/step - loss: 0.0130 - accuracy: 0.9207 - val_loss: 0.0067 - val_accuracy: 0.9629
+Epoch 18/30
+273/273 [==============================] - 267s 979ms/step - loss: 0.0123 - accuracy: 0.9274 - val_loss: 0.0054 - val_accuracy: 0.9721
+Epoch 19/30
+273/273 [==============================] - 272s 999ms/step - loss: 0.0127 - accuracy: 0.9253 - val_loss: 0.0063 - val_accuracy: 0.9643
+Epoch 20/30
+273/273 [==============================] - 270s 991ms/step - loss: 0.0132 - accuracy: 0.9243 - val_loss: 0.0058 - val_accuracy: 0.9702
+Epoch 21/30
+273/273 [==============================] - 269s 986ms/step - loss: 0.0106 - accuracy: 0.9391 - val_loss: 0.0047 - val_accuracy: 0.9813
+Epoch 22/30
+273/273 [==============================] - 272s 999ms/step - loss: 0.0117 - accuracy: 0.9329 - val_loss: 0.0071 - val_accuracy: 0.9635
+Epoch 23/30
+273/273 [==============================] - 270s 989ms/step - loss: 0.0129 - accuracy: 0.9256 - val_loss: 0.0065 - val_accuracy: 0.9658
+Epoch 24/30
+273/273 [==============================] - 271s 996ms/step - loss: 0.0105 - accuracy: 0.9393 - val_loss: 0.0045 - val_accuracy: 0.9803
+Epoch 25/30
+273/273 [==============================] - 269s 988ms/step - loss: 0.0094 - accuracy: 0.9472 - val_loss: 0.0033 - val_accuracy: 0.9857
+Epoch 26/30
+273/273 [==============================] - 273s 1000ms/step - loss: 0.0110 - accuracy: 0.9374 - val_loss: 0.0042 - val_accuracy: 0.9829
+Epoch 27/30
+273/273 [==============================] - 271s 995ms/step - loss: 0.0098 - accuracy: 0.9464 - val_loss: 0.0040 - val_accuracy: 0.9845
+Epoch 28/30
+273/273 [==============================] - 267s 979ms/step - loss: 0.0090 - accuracy: 0.9484 - val_loss: 0.0049 - val_accuracy: 0.9729
+Epoch 29/30
+273/273 [==============================] - 268s 985ms/step - loss: 0.0101 - accuracy: 0.9409 - val_loss: 0.0048 - val_accuracy: 0.9757
+Epoch 30/30
+273/273 [==============================] - 267s 980ms/step - loss: 0.0093 - accuracy: 0.9485 - val_loss: 0.0029 - val_accuracy: 0.9879
+
+
+![image](https://github.com/iamsoyeon/AI_platform/assets/83504325/1dddf973-745e-426e-b3cb-64dc682b4115)
+
+
+val_accuracy나 val_loss를 확인했을 때, 중간과제코드와 드라마틱한 차이는 없었으나, val_accuracy가 약간이라도 더 좋아진 것을 확인할 수 있었습니다. 
+
 
 
 2. installation
